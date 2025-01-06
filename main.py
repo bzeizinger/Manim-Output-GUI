@@ -9,8 +9,10 @@ directory = tk.StringVar(value="No directory selected")
 
 selected_directory = ""
 
+# Separate BooleanVars für die Checkbuttons
 show_preview_var = tk.BooleanVar(value=False)
-quality_var = tk.StringVar(value="")  # Variable für Radiobuttons (Qualität)
+save_last_frame_var = tk.BooleanVar(value=False)
+quality_var = tk.StringVar(value=False)
 
 def open_directory():
     selected_directory = fd.askdirectory()
@@ -87,5 +89,19 @@ high_quality_radiobutton = ttk.Radiobutton(
     value="2160p"
 )
 high_quality_radiobutton.pack(side="left", padx=5)
+
+title4 = ttk.Label(
+    root,
+    text="Save last Frame",
+    font=(None, 20, "bold")
+)
+title4.pack(padx=10, pady=10)
+
+save_last_frame_checkbox = ttk.Checkbutton(
+    root,
+    text="Save last frame",
+    variable=save_last_frame_var  # Eigene Variable verwenden
+)
+save_last_frame_checkbox.pack(padx=10, pady=10)
 
 root.mainloop()
