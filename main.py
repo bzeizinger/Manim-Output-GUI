@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, filedialog as fd
+from open_directory import open_directory
 
 root = tk.Tk()
 root.title("Manim Output GUI")
@@ -8,14 +9,6 @@ root.resizable(False, False)
 directory = tk.StringVar(value="No directory selected")
 
 selected_directory = ""
-
-def open_directory():
-    selected_directory = fd.askdirectory()
-    
-    if selected_directory:
-        directory.set(selected_directory)
-        
-    return selected_directory
 
 title1 = ttk.Label(
     root,
@@ -49,5 +42,12 @@ show_preview_checkbox = ttk.Checkbutton(
     text="Show preview"
 )
 show_preview_checkbox.pack(padx=10, pady=10)
+
+title3 = ttk.Label(
+    root,
+    text="Show preview",
+    font=(None, 20, "bold")
+)
+title3.pack(padx=10, pady=10)
 
 root.mainloop()
