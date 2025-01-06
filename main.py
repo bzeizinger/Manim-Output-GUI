@@ -10,6 +10,7 @@ directory = tk.StringVar(value="No directory selected")
 selected_directory = ""
 
 show_preview_var = tk.BooleanVar(value=False)
+quality_var = tk.StringVar(value="")  # Variable für Radiobuttons (Qualität)
 
 def open_directory():
     selected_directory = fd.askdirectory()
@@ -59,5 +60,32 @@ title3 = ttk.Label(
     font=(None, 20, "bold")
 )
 title3.pack(padx=10, pady=10)
+
+quality_frame = ttk.Frame(root)
+quality_frame.pack(padx=10, pady=10)
+
+low_quality_radiobutton = ttk.Radiobutton(
+    quality_frame,
+    text="480p",
+    variable=quality_var,
+    value="480p"
+)
+low_quality_radiobutton.pack(side="left", padx=5)
+
+mid_quality_radiobutton = ttk.Radiobutton(
+    quality_frame,
+    text="1080p",
+    variable=quality_var,
+    value="1080p"
+)
+mid_quality_radiobutton.pack(side="left", padx=5)
+
+high_quality_radiobutton = ttk.Radiobutton(
+    quality_frame,
+    text="2160p",
+    variable=quality_var,
+    value="2160p"
+)
+high_quality_radiobutton.pack(side="left", padx=5)
 
 root.mainloop()
