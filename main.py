@@ -9,7 +9,6 @@ directory = tk.StringVar(value="No directory selected")
 
 selected_directory = ""
 
-# Separate BooleanVars für die Checkbuttons
 show_preview_var = tk.BooleanVar(value=False)
 save_last_frame_var = tk.BooleanVar(value=False)
 quality_var = tk.StringVar(value=False)
@@ -100,7 +99,7 @@ title4.pack(padx=10, pady=10)
 save_last_frame_checkbox = ttk.Checkbutton(
     root,
     text="Save last frame",
-    variable=save_last_frame_var  # Eigene Variable verwenden
+    variable=save_last_frame_var
 )
 save_last_frame_checkbox.pack(padx=10, pady=10)
 
