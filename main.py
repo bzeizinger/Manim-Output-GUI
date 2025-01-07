@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk, filedialog as fd
-from about import about_window
 
 root = tk.Tk()
 root.title("Manim Output GUI")
