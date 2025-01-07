@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, filedialog as fd
+from about import about_window
 
 root = tk.Tk()
 root.title("Manim Output GUI")
@@ -11,6 +12,7 @@ selected_directory = ""
 
 show_preview_var = tk.BooleanVar(value=False)
 save_last_frame_var = tk.BooleanVar(value=False)
+transparent_background_var = tk.BooleanVar(value=False)
 quality_var = tk.StringVar(value=False)
 
 def open_directory():
@@ -102,5 +104,19 @@ save_last_frame_checkbox = ttk.Checkbutton(
     variable=save_last_frame_var
 )
 save_last_frame_checkbox.pack(padx=10, pady=10)
+
+title5 = ttk.Label(
+    root,
+    text="Transparent Background",
+    font=(None, 20, "bold")
+)
+title5.pack(padx=10, pady=10)
+
+transparent_background_checkbox = ttk.Checkbutton(
+    root,
+    text="Save last frame",
+    variable=transparent_background_var
+)
+transparent_background_checkbox.pack(padx=10, pady=10)
 
 root.mainloop()
