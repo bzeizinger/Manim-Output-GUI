@@ -66,29 +66,37 @@ title3.pack(padx=10, pady=10)
 quality_frame = ttk.Frame(root)
 quality_frame.pack(padx=10, pady=10)
 
-low_quality_radiobutton = ttk.Radiobutton(
+l_quality_radiobutton = ttk.Radiobutton(
     quality_frame,
-    text="480p",
+    text="854x480 15FPS",
     variable=quality_var,
-    value="480p"
+    value="854x480 15FPS"
 )
-low_quality_radiobutton.pack(side="left", padx=5)
+l_quality_radiobutton.pack(side="left", padx=5)
 
-mid_quality_radiobutton = ttk.Radiobutton(
+m_quality_radiobutton = ttk.Radiobutton(
     quality_frame,
-    text="1080p",
+    text="1920x1080 60FPS",
     variable=quality_var,
-    value="1080p"
+    value="1920x1080 60FPS"
 )
-mid_quality_radiobutton.pack(side="left", padx=5)
+m_quality_radiobutton.pack(side="left", padx=5)
 
-high_quality_radiobutton = ttk.Radiobutton(
+p_quality_radiobutton = ttk.Radiobutton(
     quality_frame,
-    text="2160p",
+    text="2560x1440 60FPS",
     variable=quality_var,
-    value="2160p"
+    value="2560x1440 60FPS"
 )
-high_quality_radiobutton.pack(side="left", padx=5)
+p_quality_radiobutton.pack(side="left", padx=5)
+
+k_quality_radiobutton = ttk.Radiobutton(
+    quality_frame,
+    text="3840x2160 60FPS",
+    variable=quality_var,
+    value="3840x2160 60FPS"
+)
+k_quality_radiobutton.pack(side="left", padx=5)
 
 title4 = ttk.Label(
     root,
@@ -117,5 +125,12 @@ transparent_background_checkbox = ttk.Checkbutton(
     variable=transparent_background_var
 )
 transparent_background_checkbox.pack(padx=10, pady=10)
+
+run_button = ttk.Button(
+    root,
+    text="Run",
+    # command=
+)
+run_button.pack(padx=20, pady=20)
 
 root.mainloop()
